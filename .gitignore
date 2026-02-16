@@ -1,0 +1,58 @@
+# === IDE y Editores ===
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.claude/
+
+# === Sistema Operativo ===
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# === Archivos de configuración sensibles ===
+# (credenciales de base de datos, contraseñas, etc.)
+# Descomenta si tienes archivos .env
+# .env
+# .env.local
+# .env.production
+
+# === Archivos subidos por usuarios ===
+home/cisemat/public_html/src/carteles_usuario/
+home/cisemat/public_html/src/comprobantes_pago/
+home/cisemat/public_html/src/extensos_usuario/
+home/cisemat/public_html/src/fotos_usuarios/
+
+# === PDFs generados (extensos y resúmenes) ===
+home/cisemat/public_html/cartas/extensos/*.pdf
+home/cisemat/public_html/cartas/resumen/*.pdf
+
+# === Base de datos (dumps pesados) ===
+database/*.sql
+
+# === Dependencias / Librerías de terceros ===
+# Descomenta si prefieres no versionar librerías externas
+# home/cisemat/public_html/librerias/PHPMailer/
+# home/cisemat/public_html/cartas/fpdf/
+
+# === Logs ===
+*.log
+error_log
+access_log
+
+# === Archivos temporales PHP ===
+*.cache
+*.tmp
+
+# === Node (si aplica) ===
+node_modules/
+package-lock.json
+yarn.lock
+
+# === Backups ===
+*.bak
+*.backup
+*.old

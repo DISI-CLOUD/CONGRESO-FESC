@@ -1,0 +1,28 @@
+.btn{
+    margin: 5px;
+}
+.img{
+    height: 95px;
+    width: 95px;
+}
+
+.fab{
+    font-size: 40px;
+}
+
+.card-text{
+    margin-right: 10px !important;
+}
+.h6{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px;
+}
+.card-body-congresoXIV{
+    background-color: #CBE6FE;
+    font-size: 24px;
+    font-weight: 600;
+}
+.h5{
+    color: #C5B268 !important;
+}

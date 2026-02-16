@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;300;400;500;600;700;800;900&display=swap');
+
+.subtitulos {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #C5B268;
+}
+
+.titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    color: rgba(59, 61, 77, 0.83);
+}
+
+.resumen {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    color: #000000;
+}
+.resumen-error {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    color: red;
+}
+
+.categoria {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: rgba(59, 61, 77, 0.83);
+}
+
+.btn-azul {
+    background: #337AB7;
+    mix-blend-mode: normal;
+    height: 36px !important;
+    font-family: 'Inter Tight', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFFFFF;
+    border: none;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.25));
+    border-radius: 4px;
+}
+
+.btn-azul:hover {
+    background-color: rgba(171, 134, 39, 0.9);
+    color: #fff;
+}

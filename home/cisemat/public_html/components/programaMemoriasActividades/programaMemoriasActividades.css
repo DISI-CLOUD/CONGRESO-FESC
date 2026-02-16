@@ -1,0 +1,72 @@
+.card-body-congresoXIV{
+    background-color: #CBE6FE;
+    font-size: 24px;
+    font-weight: 600;
+}
+.card-body-congresoXIII{
+    background-color: #FEF0CB;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.card-body-congresoXI{
+    background-color: #FED7CB;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.card-body-congreso-old{
+    background-color: #FBC16B;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.btn{
+    margin: 5px;
+}
+.img{
+    height: 95px;
+    width: 95px;
+}
+
+.h5{
+    font-size: 17px !important;
+    font-weight: 600;
+}
+
+.fab{
+    font-size: 40px;
+}
+.carousel_contenedorM{
+    position: relative;
+  }
+  .carousel_anteriorM,
+  .carousel_siguienteM {
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: none;
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+    background: none;
+    color: rgb(255, 255, 255);
+    
+  }
+  
+  .carousel .carousel_elementoM img{
+    width: 90%;
+    height: 90%;
+    object-fit: fill;
+  }
+  
+  .carousel_anteriorM{
+    left: -30px;
+  }
+  .carousel_siguienteM{
+    right: -30px;
+  }
+  
+
+

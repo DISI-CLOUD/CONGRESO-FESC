@@ -1,0 +1,12 @@
+.lista {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    color: #3B3D4D;
+	list-style: none !important;
+}
+
+.aviso{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color:#3B3D4D;
+}

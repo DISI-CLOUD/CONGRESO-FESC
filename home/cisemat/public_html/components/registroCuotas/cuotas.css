@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;300;400;500;600;700;800;900&display=swap');
+
+.fa {
+  color: #C5B268 !important;
+}
+
+.li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+}
+
+.card-body-cuotas {
+  background-color: #C5B268;
+  color: white;
+  max-width: 700px;
+  max-height: 50px;
+}
+
+.pt {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.cuotas {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.subtitulo {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: rgba(59, 61, 77, 0.83);
+}
+
+.info {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: rgba(59, 61, 77, 0.83);
+}

@@ -1,0 +1,57 @@
+.card-body-congresoXV{
+    font-size: 18px;
+font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color: rgba(59, 61, 77, 0.9);
+background-color: #ffdd9e;
+}
+
+.card-alert{
+  background-color: #C5B268;
+  font-size: 18px;
+  font-weight: 400;
+  color: #FFF;
+  text-align: center;
+}
+
+.btn{
+    margin: 5px;
+}
+.img{
+    height: 95px;
+    width: 95px;
+}
+
+.ponencias{
+  background-color: #293E6B;
+  color: white;
+  font-size: 16px;
+  font-weight: light !important;
+  font-family: Montserrat;
+}
+
+.h5{
+    font-size: 17px !important;
+    font-weight: 600;
+}
+
+.fab{
+    font-size: 25px;
+}
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+  --bs-table-accent-bg: #fbc16b57;
+  color: var(--bs-table-striped-color) !important;
+}
+.actividades{
+font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    color: rgba(59, 61, 77, 0.9);
+
+}
+
+

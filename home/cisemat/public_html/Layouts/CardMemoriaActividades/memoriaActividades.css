@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;300;400;500;600;700;800;900&display=swap');
+
+.card-head {
+    background-color: #CBE6FE !important;
+}
+
+.p-title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color: rgba(59, 61, 77, 0.9);
+    vertical-align: middle !important;
+}
+
+.span-congreso {
+    font-family: 'Inter Tight', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+    color: rgba(59, 61, 77, 0.83);
+}
+
+.span-fecha {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #3B3D4D;
+}
+
+.fab {
+    font-size: 40px;
+}
+
+.span-actividades {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    color: rgba(59, 61, 77, 0.9);
+}
+
+.table-head {
+    background-color: #293E6B;
+    color: white;
+    font-size: 16px;
+    font-weight: 300 !important;
+    font-family: 'Montserrat';
+}
+
+.table-celdas {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(59, 61, 77, 0.83);
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: #fbc16b57 !important;
+    color: var(--bs-table-striped-color) !important;
+}
+
+.titulo-tabla {
+    padding: 20px;
+    border: none !important;
+    border-radius: 6px 0px 0px 6px;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: 'Montserrat';
+}
+
+.autor {
+    padding: 20px;
+    border: none !important;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: 'Montserrat';
+}
+
+.ponencia {
+    padding: 20px;
+    border: none !important;
+    border-radius: 0px 6px 6px 0px;
+    font-size: 17px;
+    font-family: 'Montserrat';
+    font-weight: 400;
+}

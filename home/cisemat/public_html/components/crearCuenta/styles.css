@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@100;200;300;400;500;600;800;900&display=swap');
+/*font-family: 'Archivo Black', sans-serif;
+font-family: 'Montserrat', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;300;400;500;600;700;800;900&display=swap');
+/*font-family: 'Inter Tight', sans-serif;*/
+/**{
+    border: 1px solid rgb(199, 66, 66);
+    
+}*/
+
+body{
+    background-color: #F3F3F3;
+}
+
+.imagen{
+    margin: 0px;
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+
+.formulario_container{
+    background-color: white;
+    padding-top: 11%;
+    padding-bottom:11% ;
+    padding-right:10% ;
+    padding-left:10% ;
+}
+
+.titulo{
+    text-align: center;
+    color: rgba(59, 61, 77, 0.83);
+}
+
+label{
+    font-family: 'Inter Tight', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16x;
+    line-height: 18px;
+    color: rgb(59, 61, 77,0.83);
+}
+
+.contenedor_link{
+    text-align: center;
+}
+
+.link{
+    color: rgba(171, 134, 39, 0.9);
+    text-align: center;
+}
+.link_sesion{
+    color: rgba(60, 66, 182, 0.9);
+    text-align: center;
+}
+
+.div_boton{
+    text-align: center;
+}
+
+button, .boton{
+    background: #337AB7;
+    border: 1.5px solid rgba(59, 61, 77, 0.15);
+    border-radius: 7px;
+    color: #fff;
+    font-family:'Inter Tight', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    width:100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+button, .boton:hover{
+    background-color: #C5B268 ;
+    color: #fff;
+}
+
+.viewPassword{
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    mix-blend-mode: normal;
+    opacity: 0.6;
+    border: none;
+    background: none;
+}
+.imagenQuestion{
+    object-fit: cover;
+    border-color: #fff !important;
+}
+
+/*Advertencia de errores*/
+
+/* Estilos personalizados del anuncio*/
+.important-ad {
+    background-color: #f7f7f7; /* Fondo blanco */
+    color: #000; /* Texto negro */
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .important-ad h4 {
+    color: goldenrod; /* Título dorado */
+    text-align: center;
+  }
+  
+  .important-ad p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: justify;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #000; /* Texto negro */
+    padding: 0;
+    outline: none;
+  }
+  
+  .close-button:hover {
+    transform: scale(1.2);
+  }
+  body .content-flag {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+  body .content-flag.mostrar {
+    opacity: 1;
+    z-index: 1032;
+  }
+  body .content-flag i {
+    display:block;
+    float:right;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor:pointer;
+  }
+ 
+  
+  body .mascara-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 48%); /* Color de fondo con transparencia */
+    backdrop-filter: blur(5px); /* Aplicar el efecto de desenfoque a la máscara */
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.1s ease;
+  }
+  
+  body .mascara-blur.mostrar {
+    opacity: 1;
+    z-index: 1031;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .mascara-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 48%);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  /* Aviso de privacidad */
+  .mascara-privacidad {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 48%);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .privacy-notice {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f7f7f7;
+    color: #000;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1031;
+  }
+  
+  .privacy-notice h2 {
+    text-align: center;
+    color: goldenrod;
+  }
+  
+  .scrollable-content {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #accept-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  #accept-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  #privacy-link {
+    text-align: center;
+    color: #007BFF;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .scrollable-content p {
+    text-align: justify;
+    overflow-wrap: break-word;
+    padding-right: 20px
+  }
+  

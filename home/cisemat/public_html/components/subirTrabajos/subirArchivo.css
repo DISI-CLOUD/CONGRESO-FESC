@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;300;400;500;600;700;800;900&display=swap');
+
+.btn-Subir-Archivo {
+    background: #C5B268 !important;
+    border-radius: 9px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border: none !important;
+    cursor: pointer;
+}
+
+.btn-cancelar {
+    background: #C5B268 !important;
+    border-radius: 9px;
+    text-align: center;
+    mix-blend-mode: normal;
+    height: 36px !important;
+    font-family: 'Inter Tight', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    color: #FFFFFF;
+    border: none !important;
+}
+
+.text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #3B3D4D;
+}
+.span-textos{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #767676;
+    }
+
+.imgQuestion {
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.btn-azul {
+    background: #337AB7;
+    mix-blend-mode: normal;
+    border-radius: 9px;
+    height: 36px !important;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    color: #FFFFFF;
+    border: none;
+}
+
+.btn-azul:hover {
+    background: #C5B268 ;
+    color: #fff;
+}

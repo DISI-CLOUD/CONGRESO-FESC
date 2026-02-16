@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;300;400;500;600;700;800;900&display=swap');
+
+
+.btn-style-chico {
+    background: #337AB7;
+    mix-blend-mode: normal;
+    border: 1.5px solid rgba(59, 61, 77, 0.15);
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.btn-style-chico:hover {
+    background-color: rgba(171, 134, 39, 0.9);
+    color: #fff;
+}
+
+.btn-rojo {
+    background: rgba(236, 0, 0, 0.22);
+    mix-blend-mode: normal;
+    border: 1.5px solid rgba(59, 61, 77, 0.15);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.btn-rojo:hover {
+    background: rgba(226, 36, 36, 0.534) !important;
+    border-radius: 4px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.texto-trabajo {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #767676;
+}

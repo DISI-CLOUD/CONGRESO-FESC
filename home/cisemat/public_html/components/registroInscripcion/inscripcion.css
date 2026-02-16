@@ -1,0 +1,17 @@
+.fa {
+  color: #C5B268 !important;
+}
+
+.li {
+  font-family: 'Montserrat';
+  font-size: 20px;
+}
+
+.lista-texto {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: rgba(59, 61, 77, 0.83);
+}

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;300;400;500;600;700;800;900&display=swap');
+
+/*ESTILOS DE LA CARD DE TRABAJOS NO APROBADOS*/ 
+.card {
+    border: 1px solid rgba(0, 0, 59, 0.2);
+    border-radius: 9px;
+}
+
+.card-header {
+    border-radius: 9px !important;
+    
+}
+.header-rojo{
+    background-color: #FFF2F2;
+}
+.circulo-tipo-rojo {
+    background-color: #EC0000;
+    border-radius: 100px;
+    width: 2px;
+    height: 20px !important;
+}
+
+.span-ponencia {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: rgba(59, 61, 77, 0.9);
+}
+
+.card-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+    color: #3B3D4D; 
+}
+
+.card-text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #3B3D4D;
+}
+
+.divTipoPonencia {
+    text-align: center;
+    background-color: #F0F8F0;
+    width: 120px;
+    height: 30px;
+    border-radius: 13px;
+}
+
+.btn-card {
+    background: #337AB7;
+    mix-blend-mode: normal;
+    border-radius: 9px;
+    height: 36px !important;
+    font-family: 'Inter Tight', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFFFFF;
+    border: none;
+}
+
+.btn-card:hover {
+    background-color: rgba(171, 134, 39, 0.9);
+    color: #fff;
+}
+
+.textoAdvertencia {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #767676;
+}
+
+.imgQuestion {
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+}
+
+.flechaCard {
+    width: 70px;
+    background: none;
+    border: none;
+}
+
+/*******************************************/

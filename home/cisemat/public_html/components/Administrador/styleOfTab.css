@@ -1,0 +1,46 @@
+[role="tablist"]{
+ list-style: none;
+ margin: 1;
+ padding: 0;
+ display: flex;
+ gap: 1rem;
+}
+
+[aria-selected="true"]{
+  text-decoration-thickness: 0.25em;
+  text-underline-offset: 0.5em;
+  color: darkgoldenrod;
+
+}
+
+a{
+  color: gray ;
+  /*background-color: #f0f0f0;*/
+}
+
+
+/*.tabs-container{
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  background: hsl(0 0% 50% / 0.1);
+}
+.site-title {
+  font-size: var(--fs-900);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: var(--fs-800);
+  line-height: 1.1;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

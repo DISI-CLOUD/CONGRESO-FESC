@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;300;400;500;600;700;800;900&display=swap');
+
+.card-body-congresoXV {
+  background-color: #ffdd9e;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.h5 {
+  font-size: 17px !important;
+  font-weight: 600;
+}
+
+.btn-convocatoria {
+  text-decoration: none;
+  background: #C5B268 !important;
+  border-radius: 9px;
+  text-align: center;
+  mix-blend-mode: normal;
+  height: 36px !important;
+  font-family: 'Inter Tight', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FFFFFF;
+  border: none !important;
+}
+
+.btn-convocatoria:hover {
+  background-color: #368ACB !important;
+  color: #FFFFFF;
+}
+
+.card-body-congreso {
+  font-size: 22px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(59, 61, 77, 0.9);
+}
+
+.span-texto {
+  font-family: 'Inter Tight', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  color: #757575;
+}
+.span-fecha {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #3B3D4D;
+}
+
+.btn {
+  margin: 5px;
+}
+
+.fab {
+  font-size: 40px;
+}

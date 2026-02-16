@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;300;400;500;600;700;800;900&display=swap');
+.card-header {
+    background-color: #FBC16B !important;
+}
+
+.p-title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color: rgba(59, 61, 77, 0.9);
+    vertical-align: middle !important;
+}
+
+.span-congreso {
+    font-family: 'Inter Tight', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+    color: rgba(59, 61, 77, 0.83);
+}
+
+.span-fecha {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #3B3D4D;
+}
+
+.fab {
+    font-size: 40px;
+}
+
+.enlace {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    text-decoration-line: underline;
+    color: #337AB7;
+}

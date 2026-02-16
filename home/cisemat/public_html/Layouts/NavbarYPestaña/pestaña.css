@@ -1,0 +1,17 @@
+.navYPestaña{
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+    color: rgba(59, 61, 77, 0.83);
+    }
+    .navYPestaña:hover{
+    color:#FBC16B;
+    }
+
+.historialEvaluador{
+    display: none;
+}

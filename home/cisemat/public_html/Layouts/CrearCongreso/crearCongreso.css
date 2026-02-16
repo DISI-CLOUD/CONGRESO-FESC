@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;300;400;500;600;700;800;900&display=swap');
+
+.head {
+  background: #337AB7 !important;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+label {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: rgba(59, 61, 77, 0.83);
+}
+
+input {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: rgba(59, 61, 77, 0.83) !important;
+}
+
+.imgQuestion {
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+
+.textoAdvertencia {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  color: #767676;
+}
+
+.btn-azul {
+  background: #337AB7;
+  mix-blend-mode: normal;
+  border: 1.5px solid rgba(59, 61, 77, 0.15);
+  border-radius: 8px;
+  color: #fff !important;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+
+}
+
+.btn:hover {
+  background-color: rgba(171, 134, 39, 0.9);
+  color: #fff;
+}
+
+
+.li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+}
+
+.card-body-cuotas {
+  background-color: #C5B268;
+  color: white;
+  max-width: 700px;
+  max-height: 50px;
+}
+
+.pt {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.cuotas {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.subtitulo {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: rgba(59, 61, 77, 0.83);
+}
+
+.campos-correo {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 480px) {
+    .campos-correo {
+      flex-direction: column;
+    }
+}
+
+.campo-email {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-email {
+  max-width: 400px;
+}
+
+.check-pass {
+  transform: scale(1.5);
+  margin-top: 15px;
+}
+
+@media (max-width: 480px) {
+    .botones {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .botones a{
+      margin: 20px 0;
+    }
+}
+
+.info-final {
+  margin-top: 25px;
+}
+
+@media (max-width: 480px) {
+    .info-final {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .info-final a {
+      margin-bottom: 20px;
+    }
+}

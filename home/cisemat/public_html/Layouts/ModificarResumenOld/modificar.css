@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;300;400;500;600;700;800;900&display=swap');
+
+
+.btn-tipo-ponencia{
+    border: 1px solid #FFCA64;
+    border-radius: 6px;
+    font-family: 'Inter Tight', sans-serif;
+    color: rgba(59, 61, 77, 0.83);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 39px;
+    text-align: center;
+}
+.btn-tipo-ponencia:hover{
+    border: 1px solid #FFCA64;
+    border-radius: 6px;
+    font-family: 'Inter Tight', sans-serif;
+    color: rgba(59, 61, 77, 0.83);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 39px;
+    text-align: center;
+    background: #FBC16B;
+}
+
+   .btn-cancelar{
+    background: #C5B268 !important;
+    border-radius: 9px;
+    text-align: center; 
+    mix-blend-mode: normal;
+    height: 36px !important;
+    font-family: 'Inter Tight', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFFFFF;
+    border: none !important;
+    }
+.span-textos{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #767676;
+    }
+
+.imgQuestion{
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+    } 
+.subtitulos{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: rgba(59, 61, 77, 0.83);
+
+}
+.btn-constancia{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    border-radius: 4px;
+    background: rgba(0, 132, 55, 0.17);
+    border-radius: 72px;
+}
+
+.btn-dorado{
+    background-color:rgba(171, 134, 39, 0.9);
+    mix-blend-mode: normal;
+    border: 1.5px solid rgba(59, 61, 77, 0.15);
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    }
+.btn-dorado:hover{
+    background: #337AB7;
+    color: #fff;
+}
+.btn-azul{
+    background: #337AB7;
+    mix-blend-mode: normal;
+    border: 1.5px solid rgba(59, 61, 77, 0.15);
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    }
+.btn-azul:hover{
+    background-color:rgba(171, 134, 39, 0.9);
+    color: #fff;
+}
+.btn-rojo{
+    background: rgba(236, 0, 0, 0.22);
+    mix-blend-mode: normal;
+    border: 1.5px solid rgba(59, 61, 77, 0.15);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    border-radius: 4px;
+    } 
+    
+    .btn-rojo:hover{
+    background: rgba(226, 36, 36, 0.534) !important;
+    border-radius: 4px;
+    }
+
+
+    /*Advertencia de errores*/
+/*Formato de error por defecto*/
+.formulario_input-error{
+    margin-bottom: 0;
+    display: none;
+    color:red;
+}
+/*Formato de error activo*/
+.formulario_input-error-activo{
+    margin-bottom: 0;
+    display: block;
+}

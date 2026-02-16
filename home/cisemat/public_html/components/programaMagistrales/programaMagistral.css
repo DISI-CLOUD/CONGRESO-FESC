@@ -1,0 +1,47 @@
+.card-body-congresoXV {
+  background-color: #ffdd9e;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.card-alert {
+  background-color: #C5B268;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px !important;
+  color: #FFF;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.img {
+  height: 95px;
+  width: 95px;
+}
+
+.span-nombre {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 29px;
+  color: rgba(59, 61, 77, 0.9);
+}
+
+.span-institucion {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 29px;
+  color: rgba(59, 61, 77, 0.9);
+}
+
+.span-titulo {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 29px;
+  color: #337AB7;
+
+}

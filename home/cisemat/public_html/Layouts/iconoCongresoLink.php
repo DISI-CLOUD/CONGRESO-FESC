@@ -1,0 +1,1 @@
+<link rel="shortcut icon" href="../../src/logos_congresos/iconoIcon.jpg">

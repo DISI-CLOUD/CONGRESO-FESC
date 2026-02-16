@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/*COPIAR ESTOS ESTILOS EN TODOS LAS HOJAS DE ESTILO */
+/*----------ESTILO DEL SIDEBAR------------*/
+.background-lateral{
+    background: linear-gradient(#ddedfc11, #f7fbff41); 
+}
+.background-lateral-boton{
+    background-color: #ddedfc11;
+}
+.lis{
+border: none !important;
+}
+.lis:hover{
+background: rgba(255, 153, 0, 0.28);
+border-radius: 2px;
+}
+.label-text{
+font-family: 'Montserrat', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 18px;
+color: #7A7676;
+}
+.text-a{
+text-decoration: none !important;
+font-family: 'Montserrat', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 18px;
+color: #3B3D4D;
+cursor: pointer;
+}
+/*----------ESTILO DEL SIDEBAR------------*/
+
+.btn-style-chico{
+background:rgba(171, 134, 39, 0.9);
+mix-blend-mode: normal;
+border: 1.5px solid rgba(59, 61, 77, 0.15);
+border-radius: 8px;
+color: #fff;
+font-family: 'Montserrat', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+}
+
+.btn-style-chico:hover{
+background-color: #337AB7;
+color: #fff;
+}
+
+.sub{
+font-family: 'Montserrat', sans-serif;
+font-weight: 400;
+font-size: 20px;
+line-height: 18px;
+color: #3B3D4D !important;
+}
+.ti{
+font-family: 'Montserrat', sans-serif !important;
+font-weight: 600;
+font-size: 24px !important;
+line-height: 18px;
+color: #3B3D4D !important;
+}
+
+
+.tiS{
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600;
+    font-size: 24px !important;
+    line-height: 18px;
+    color: #293E6B !important;
+    }
+.texto{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Montserrat';
+    border-color: #7A7676;
+}
+
+.card-head{
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 18px;
+    color: #293E6B;
+}
+ 
+.card-body{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 16px;
+    color: #3B3D4D;
+}
+.subti{
+    font-weight: 600;
+    color:#337AB7;
+    font-family: 'Montserrat';
+    font-size: 17px;
+}
+.line{
+    display: fixed;
+    justify-content: center;
+}
+.referencia{
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 30px;
+    color:#3B3D4D;
+}
+
+.span-textos{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #767676;
+    }
+
+.imgQuestion{
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+    } 

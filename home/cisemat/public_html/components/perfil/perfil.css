@@ -1,0 +1,80 @@
+
+
+body {
+   font-family: Montserrat;
+}
+h1{
+    font-size: 32px;
+    font-weight: bold;
+    color: #3b3d4d;
+}
+h2{
+    font-size: 26px;
+    font-weight: bold;
+    color: #3b3d4d;
+}
+.btn {
+    font-family: Montserrat;
+}
+.viewPassword{
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    mix-blend-mode: normal;
+    opacity: 0.6;
+    border: none;
+    background: none;
+}
+.btn-style-chico{
+    background: #337AB7;
+    mix-blend-mode: normal;
+    border: 1.5px solid rgba(59, 61, 77, 0.15);
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+    .btn-style-chico:hover{
+    background-color:rgba(171, 134, 39, 0.9);
+    color: #fff;
+}
+.btn-outline-danger{
+    background: #ffffff;
+    mix-blend-mode: normal;
+    border: 1.5px solid rgba(59, 61, 77, 0.15);
+    border-radius: 8px;
+    color: rgb(255, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/*Advertencia de errores*/
+/*Formato de error por defecto*/
+.formulario_input-error {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+    color:red;
+}
+
+/*Formato de error activo*/
+.formulario_input-error-activo{
+    font-size: 12px;
+    margin-bottom: 0;
+    display: block;
+}
+.phone:focus{
+    border: none !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.alert.alert-warning {
+    position: unset !important;
+}

@@ -1,0 +1,31 @@
+.card-body-congresoXIV{
+    background-color: #CBE6FE;
+    font-size: 24px;
+    font-weight: 600;
+}
+.card-body-congresoXIII{
+    background-color: #FEF0CB;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.card-body-congresoXI{
+    background-color: #FED7CB;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.card-body-congreso-old{
+    background-color: #FBC16B;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.btn{
+    margin: 5px;
+}
+.img{
+    height: 95px;
+    width: 95px;
+}
+
