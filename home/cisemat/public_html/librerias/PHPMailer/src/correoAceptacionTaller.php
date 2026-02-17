@@ -54,4 +54,8 @@ echo "Error: " . $mail->ErrorInfo;
 echo "<br>Se ha enviado un correo al autor informándole del resultado de la evaluación de su trabajo.<br>";
 }
 
+require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+$_tel = traerTelefonoPorEmail($emailAutor, $conexion);
+enviarWhatsapp($_tel, "Tu taller $idPonencia fue ACEPTADO por el Comité Evaluador de CISEMAT.");
+
 ?>

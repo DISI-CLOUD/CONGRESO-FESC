@@ -43,3 +43,7 @@ if (!$mail->Send()) {
 } else {
     echo "Correo enviado exitosamente.";
 }
+
+require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+$_tel = traerTelefonoPorEmail($correoElectronico, $conexion);
+enviarWhatsapp($_tel, "Tu contraseña de CISEMAT fue actualizada exitosamente. Si no fuiste tú, contacta al administrador.");

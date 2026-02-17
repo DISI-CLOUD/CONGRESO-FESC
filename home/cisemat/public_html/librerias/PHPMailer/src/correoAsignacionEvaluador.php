@@ -55,6 +55,10 @@ $mail->CharSet = 'UTF-8';
 if(!$mail->Send()) {
   //si hay un error en el envio de correo se informa
   echo "Error: " . $mail->ErrorInfo;
-  
+
 }
+
+require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+$_tel = traerTelefonoPorEmail($emailEvaluador, $conexion);
+enviarWhatsapp($_tel, "Se te ha asignado un trabajo para evaluar en CISEMAT. Inicia sesión para revisarlo.");
 ?>

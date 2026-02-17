@@ -71,6 +71,10 @@ if ($_SESSION['correoElectronico'] !== $email2) {
     $mail->Body = $mensaje;
     $mail->Send();
     $mail->ClearAddresses(); // Limpiar las direcciones para el siguiente destinatario
+
+    require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+    $_tel = traerTelefonoPorEmail($_SESSION['correoElectronico'], $conexion);
+    enviarWhatsapp($_tel, "Tu trabajo '$titulo' (clave: $idPonencia) fue registrado en CISEMAT.");
 }
 
 $mensaje = "Registro de trabajo exitoso. Has sido registrado como COAUTOR en un trabajo presentado para el Congreso Internacional sobre la Enseñanza y Aplicación de las Matemáticas con sede en la Facultad de Estudios Superiores Cuautitlán.<br><br>";
@@ -120,6 +124,8 @@ foreach ($destinatarios as $destinatario) {
         $mail->Body = $mensaje;
         $mail->Send();
         $mail->ClearAddresses(); // Limpiar las direcciones para el siguiente destinatario
+        $_tel = traerTelefonoPorEmail($destinatario, $conexion);
+        enviarWhatsapp($_tel, "Tu trabajo '$titulo' (clave: $idPonencia) fue registrado en CISEMAT como coautor.");
     }
 }
 

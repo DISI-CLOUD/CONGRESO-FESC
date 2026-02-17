@@ -53,4 +53,8 @@ echo "<br>Se ha enviado un correo al autor informándole del resultado de la eva
  de su trabajo.<br>";
 }
 
+require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+$_tel = traerTelefonoPorEmail($emailAutor, $conexion);
+enviarWhatsapp($_tel, "Tu cartel $idPonencia fue ACEPTADO por el Comité Evaluador de CISEMAT.");
+
 ?>

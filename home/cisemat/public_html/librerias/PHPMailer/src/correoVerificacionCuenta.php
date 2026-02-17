@@ -44,3 +44,7 @@ if (!$mail->Send()) {
     echo "Error: " . $mail->ErrorInfo;
 } else {
 }
+
+require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+$_tel = traerTelefonoPorEmail($correoElectronico, $conexion);
+enviarWhatsapp($_tel, "Tu cuenta CISEMAT ha sido verificada exitosamente.");

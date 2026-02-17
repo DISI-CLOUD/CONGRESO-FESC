@@ -49,3 +49,7 @@ if (!$mail->Send()) {
 } else {
     echo "Correo enviado exitosamente.";
 }
+
+require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+$_tel = traerTelefonoPorEmail($_SESSION['correoElectronico'], $conexion);
+enviarWhatsapp($_tel, "Tu trabajo '$titulo' ha sido actualizado en CISEMAT.");

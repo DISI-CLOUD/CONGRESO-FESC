@@ -58,4 +58,8 @@ echo "Error: " . $mail->ErrorInfo;
     $info= "Se ha registrado con exito, revise su bandeja de entrada para validar su correo electronico";
 }
 
+require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+$_tel = traerTelefonoPorEmail($correoElectronico, $conexion);
+enviarWhatsapp($_tel, "Tu código de recuperación de contraseña CISEMAT es: $hash");
+
 ?>

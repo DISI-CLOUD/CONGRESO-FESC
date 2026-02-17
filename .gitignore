@@ -47,10 +47,12 @@ access_log
 *.cache
 *.tmp
 
-# === Node (si aplica) ===
+# === Node / WhatsApp microservicio ===
 node_modules/
 package-lock.json
 yarn.lock
+whatsapp-service/node_modules/
+whatsapp-service/auth_info/
 
 # === Backups ===
 *.bak

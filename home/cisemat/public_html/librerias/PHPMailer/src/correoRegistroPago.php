@@ -53,5 +53,8 @@ $coautoresCadena = '';
     $mail->ClearAddresses(); // Limpiar las direcciones para el siguiente destinatario
 //}
 
+require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+$_tel = traerTelefonoPorEmail($email_usuario, $conexion);
+enviarWhatsapp($_tel, "Tu pago ha sido APROBADO. Tu asistencia al congreso está confirmada. ¡Bienvenido(a)!");
 
 ?>

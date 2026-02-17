@@ -48,6 +48,10 @@ if(!$mail->Send()) {
 echo "Error: " . $mail->ErrorInfo;
 }
 
+require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+$_tel = traerTelefonoPorEmail($emailAutor, $conexion);
+enviarWhatsapp($_tel, "Tu extenso $idPonencia fue ACEPTADO por el Comité Evaluador. ¡Felicidades!");
+
 // CORREO PARA EL EVALUADOR
 
 $mail2 = new PHPMailer();

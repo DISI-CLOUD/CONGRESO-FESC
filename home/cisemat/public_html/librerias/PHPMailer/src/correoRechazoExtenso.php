@@ -59,6 +59,16 @@ if(!$mail->Send()) {
   echo "Error: " . $mail->ErrorInfo;
 }
 
+require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+$_tel = traerTelefonoPorEmail($emailAutor, $conexion);
+enviarWhatsapp($_tel, "Tu extenso $idPonencia requiere correcciones. Revisa tu email para más detalles.");
+if(count($coautores)!=0){
+    for ($i=0; $i <=count($coautores)-1; $i++) {
+        $_telC = traerTelefonoPorEmail($coautores[$i]["email"], $conexion);
+        enviarWhatsapp($_telC, "El extenso $idPonencia en el que participas requiere correcciones. Revisa el email del autor.");
+    }
+}
+
 // CORREO PARA EL EVALUADOR
 
 $mail2 = new PHPMailer();

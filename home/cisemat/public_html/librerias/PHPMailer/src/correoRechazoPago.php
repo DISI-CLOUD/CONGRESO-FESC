@@ -53,5 +53,8 @@ $coautoresCadena = '';
     $mail->ClearAddresses(); // Limpiar las direcciones para el siguiente destinatario
 //}
 
+require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+$_tel = traerTelefonoPorEmail($email_usuario, $conexion);
+enviarWhatsapp($_tel, "Tu pago fue RECHAZADO. Revisa tu email para más detalles o contacta a altamira@unam.mx.");
 
 ?>

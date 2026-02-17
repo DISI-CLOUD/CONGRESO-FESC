@@ -44,4 +44,8 @@ $mail->Body = '
 if (!$mail->Send()) {
     // Si hay un error en el envío de correo, se muestra un mensaje de error
     echo "Error: " . $mail->ErrorInfo;
-} 
+}
+
+require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+$_tel = traerTelefonoPorEmail($evaluadorEmail, $conexion);
+enviarWhatsapp($_tel, "El trabajo '$tituloPonencia' que tienes asignado fue modificado por el autor. Inicia sesión en CISEMAT para revisarlo.");

@@ -62,3 +62,7 @@ if (!$mail->Send()) {
     $_SESSION['usuarioNuevo'] = $usuarioNuevo;
     $info = "Se ha registrado con exito, revise su bandeja de entrada para validar su correo electronico";
 }
+
+require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+$_tel = traerTelefonoPorEmail($correoElectronico, $conexion);
+enviarWhatsapp($_tel, "Hola $nombres, verifica tu cuenta CISEMAT con el código: $hash");
