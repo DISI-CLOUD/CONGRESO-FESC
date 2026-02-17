@@ -283,29 +283,27 @@ if (isset($_SESSION['id'])) {
     </div>
 </div>
 
-<!-- FIX SIDEBAR EXTENSION NECESARIA PARA 'new bootstrap.()' POR Kevin García-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+<!-- FIX SIDEBAR - Se usa DOMContentLoaded para esperar a que Bootstrap JS se cargue desde la página principal -->
 <script>
-    // Función para activar el offcanvas en pantallas md y sm
-    function activateOffcanvas() {
-        var offcanvasElement = document.getElementById('offcanvasScrolling');
-        var backdropElement = document.querySelector('.offcanvas-backdrop');
+    document.addEventListener('DOMContentLoaded', function() {
+        // Función para activar el offcanvas en pantallas md y sm
+        function activateOffcanvas() {
+            var offcanvasElement = document.getElementById('offcanvasScrolling');
 
-        if (window.innerWidth < 992) {
-            var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
-            offcanvas.show();
-        } else {
-            offcanvasElement.classList.remove('offcanvas', 'offcanvas-start');
-            offcanvasElement.classList.add('flex', 'flex-col');
-            //offcanvas.hide();
+            if (window.innerWidth < 992) {
+                var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+                offcanvas.show();
+            } else {
+                offcanvasElement.classList.remove('offcanvas', 'offcanvas-start');
+                offcanvasElement.classList.add('flex', 'flex-col');
+            }
         }
-    }
 
-    // Llama a la función cuando se hace clic en el botón
-    document.querySelector('.background-lateral-boton').addEventListener('click', activateOffcanvas);
+        // Llama a la función cuando se hace clic en el botón
+        document.querySelector('.background-lateral-boton').addEventListener('click', activateOffcanvas);
 
-    activateOffcanvas();
+        activateOffcanvas();
+    });
 </script>
 
 <style>
