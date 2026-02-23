@@ -1,10 +1,44 @@
 <?php
 /**
+ * Normaliza un número telefónico para envío por WhatsApp.
+ * - Elimina caracteres no numéricos (espacios, guiones, paréntesis, +)
+ * - Si tiene código de país 52 (México) lo quita para dejar solo 10 dígitos
+ * - Valida que el resultado sean exactamente 10 dígitos
+ * @param string $telefono  Número en cualquier formato
+ * @return string  Número limpio de 10 dígitos, o cadena vacía si es inválido
+ */
+function normalizarTelefono($telefono) {
+    $limpio = preg_replace('/[^0-9]/', '', $telefono);
+
+    // Si viene con código de país México (52) + 10 dígitos = 12 dígitos
+    if (strlen($limpio) === 12 && str_starts_with($limpio, '52')) {
+        $limpio = substr($limpio, 2);
+    }
+    // Si viene con 521 (formato antiguo) + 10 dígitos = 13 dígitos
+    if (strlen($limpio) === 13 && str_starts_with($limpio, '521')) {
+        $limpio = substr($limpio, 3);
+    }
+
+    // Debe ser exactamente 10 dígitos
+    if (strlen($limpio) !== 10) {
+        return '';
+    }
+
+    // Validar que el número empiece con un código de área válido (2-9)
+    if ($limpio[0] === '0' || $limpio[0] === '1') {
+        return '';
+    }
+
+    return $limpio;
+}
+
+/**
  * Envía un mensaje de WhatsApp vía el microservicio Baileys.
- * @param string $telefono  Número a 10 dígitos (ej: 5548569471)
+ * @param string $telefono  Número telefónico (se normaliza automáticamente)
  * @param string $mensaje   Texto del mensaje
  */
 function enviarWhatsapp($telefono, $mensaje) {
+    $telefono = normalizarTelefono($telefono);
     if (empty($telefono)) return;
     $url = 'http://localhost:3001/send';
     $data = json_encode(['telefono' => $telefono, 'mensaje' => $mensaje]);
@@ -14,6 +48,29 @@ function enviarWhatsapp($telefono, $mensaje) {
             'header'  => 'Content-Type: application/json',
             'content' => $data,
             'timeout' => 5,
+            'ignore_errors' => true,
+        ]
+    ]);
+    @file_get_contents($url, false, $ctx);
+}
+
+/**
+ * Envía un PDF por WhatsApp vía el microservicio Baileys.
+ * @param string $telefono   Número a 10 dígitos
+ * @param string $rutaPdf    Ruta absoluta al archivo PDF
+ * @param string $mensaje    Caption/mensaje que acompaña al PDF
+ */
+function enviarWhatsappPdf($telefono, $rutaPdf, $mensaje = '') {
+    $telefono = normalizarTelefono($telefono);
+    if (empty($telefono) || empty($rutaPdf)) return;
+    $url = 'http://localhost:3001/send-pdf';
+    $data = json_encode(['telefono' => $telefono, 'ruta' => $rutaPdf, 'mensaje' => $mensaje]);
+    $ctx = stream_context_create([
+        'http' => [
+            'method'  => 'POST',
+            'header'  => 'Content-Type: application/json',
+            'content' => $data,
+            'timeout' => 10,
             'ignore_errors' => true,
         ]
     ]);

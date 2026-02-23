@@ -56,5 +56,7 @@ echo "<br>Se ha enviado un correo al autor informándole del resultado de la eva
 require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
 $_tel = traerTelefonoPorEmail($emailAutor, $conexion);
 enviarWhatsapp($_tel, "Tu cartel $idPonencia fue ACEPTADO por el Comité Evaluador de CISEMAT.");
+$rutaPdf = realpath(__DIR__ . '/../../../cartas/extensos/' . $idPonencia);
+if ($rutaPdf) enviarWhatsappPdf($_tel, $rutaPdf, "Carta de aceptación cartel $idPonencia");
 
 ?>

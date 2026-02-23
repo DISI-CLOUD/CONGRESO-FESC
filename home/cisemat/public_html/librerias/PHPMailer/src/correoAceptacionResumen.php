@@ -67,10 +67,13 @@ echo "Error: " . $mail->ErrorInfo;
 require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
 $_tel = traerTelefonoPorEmail($emailAutor, $conexion);
 enviarWhatsapp($_tel, "Tu resumen $idPonencia fue ACEPTADO por el Comité Evaluador de CISEMAT.");
+$rutaPdf = realpath(__DIR__ . '/../../../cartas/resumen/' . $idPonencia . '.pdf');
+if ($rutaPdf) enviarWhatsappPdf($_tel, $rutaPdf, "Carta de aceptación resumen $idPonencia");
 if(count($coautores)!=0){
     for ($i=0; $i <=count($coautores)-1; $i++) {
         $_telC = traerTelefonoPorEmail($coautores[$i]["email"], $conexion);
         enviarWhatsapp($_telC, "El resumen $idPonencia en el que participas como coautor fue ACEPTADO por el Comité Evaluador de CISEMAT.");
+        if ($rutaPdf) enviarWhatsappPdf($_telC, $rutaPdf, "Carta de aceptación resumen $idPonencia");
     }
 }
 

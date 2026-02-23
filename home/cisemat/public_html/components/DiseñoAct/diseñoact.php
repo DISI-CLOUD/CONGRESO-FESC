@@ -91,6 +91,7 @@ for ($i = 2; $i <= 15; $i++) {
                                     }
 
 
+                                    echo "<tr>";
                                     echo "<th>$fecha_formateada</th>";
                                     echo "<td><strong>$descripcion_evento</strong></td>";
                                     echo "<td>";

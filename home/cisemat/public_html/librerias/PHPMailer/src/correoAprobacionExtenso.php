@@ -51,6 +51,8 @@ echo "Error: " . $mail->ErrorInfo;
 require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
 $_tel = traerTelefonoPorEmail($emailAutor, $conexion);
 enviarWhatsapp($_tel, "Tu extenso $idPonencia fue ACEPTADO por el Comité Evaluador. ¡Felicidades!");
+$rutaPdf = realpath(__DIR__ . '/../../../cartas/extensos/' . $idPonencia . '.pdf');
+if ($rutaPdf) enviarWhatsappPdf($_tel, $rutaPdf, "Carta de aceptación extenso $idPonencia");
 
 // CORREO PARA EL EVALUADOR
 
