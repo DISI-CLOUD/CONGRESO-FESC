@@ -114,4 +114,7 @@ if(!$mail2->Send()) {
 echo "Error: " . $mail2->ErrorInfo;
 }
 
+$_telEval = traerTelefonoPorEmail($correoEvaluador, $conexion);
+enviarWhatsapp($_telEval, "Evaluación del resumen $idPonencia registrada exitosamente con estado: $evaluacionResumen. Gracias por su apoyo.");
+
 ?>

@@ -49,4 +49,8 @@ if(!$mail2->Send()) {
 echo "Error: " . $mail2->ErrorInfo;
 }
 
+require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+$_tel = traerTelefonoPorEmail($correoEvaluador, $conexion);
+enviarWhatsapp($_tel, "El extenso $idPonencia requiere de su visto bueno para continuar con el proceso de aceptación. Inicie sesión en CISEMAT para revisarlo.");
+
 ?>
