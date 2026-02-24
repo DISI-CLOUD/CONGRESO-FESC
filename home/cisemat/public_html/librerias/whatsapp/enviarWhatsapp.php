@@ -32,6 +32,9 @@ function normalizarTelefono($telefono) {
     return $limpio;
 }
 
+/** Pie de mensaje añadido automáticamente a todos los mensajes de WhatsApp. */
+define('WA_PIE_MENSAJE', "\n\n_Este número es solo para notificaciones. En caso de tener una duda, sugerencia u opinión acerca del Congreso contacta a través del siguiente medio: 18congresomatematicas@cuautitlan.unam.mx_");
+
 /**
  * Envía un mensaje de WhatsApp vía el microservicio Baileys.
  * @param string $telefono  Número telefónico (se normaliza automáticamente)
@@ -41,7 +44,7 @@ function enviarWhatsapp($telefono, $mensaje) {
     $telefono = normalizarTelefono($telefono);
     if (empty($telefono)) return;
     $url = 'http://localhost:3001/send';
-    $data = json_encode(['telefono' => $telefono, 'mensaje' => $mensaje]);
+    $data = json_encode(['telefono' => $telefono, 'mensaje' => $mensaje . WA_PIE_MENSAJE]);
     $ctx = stream_context_create([
         'http' => [
             'method'  => 'POST',
@@ -64,7 +67,7 @@ function enviarWhatsappPdf($telefono, $rutaPdf, $mensaje = '') {
     $telefono = normalizarTelefono($telefono);
     if (empty($telefono) || empty($rutaPdf)) return;
     $url = 'http://localhost:3001/send-pdf';
-    $data = json_encode(['telefono' => $telefono, 'ruta' => $rutaPdf, 'mensaje' => $mensaje]);
+    $data = json_encode(['telefono' => $telefono, 'ruta' => $rutaPdf, 'mensaje' => $mensaje . WA_PIE_MENSAJE]);
     $ctx = stream_context_create([
         'http' => [
             'method'  => 'POST',
