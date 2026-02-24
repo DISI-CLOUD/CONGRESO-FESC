@@ -32,8 +32,32 @@ function normalizarTelefono($telefono) {
     return $limpio;
 }
 
-/** Pie de mensaje añadido automáticamente a todos los mensajes de WhatsApp. */
-define('WA_PIE_MENSAJE', "\n\n_Este número es solo para notificaciones. En caso de tener una duda, sugerencia u opinión acerca del Congreso contacta a través del siguiente medio: 18congresomatematicas@cuautitlan.unam.mx_");
+/**
+ * Obtiene el correo de contacto del congreso actual desde la BD.
+ * Usa caché estático para ejecutar la consulta solo una vez por request.
+ * @return string  Correo de contacto, o cadena vacía si no se puede obtener.
+ */
+function traerCorreoContactoCongreso() {
+    static $correo = null;
+    if ($correo !== null) return $correo;
+    global $conexion;
+    if (!$conexion) return '';
+    $res = mysqli_query($conexion, "SELECT correo_congreso FROM congreso ORDER BY id_congreso DESC LIMIT 1");
+    if ($res && $row = mysqli_fetch_assoc($res)) {
+        $correo = strtolower($row['correo_congreso'] ?? '');
+    }
+    return $correo ?? '';
+}
+
+/**
+ * Genera el pie de mensaje de WhatsApp con el correo de contacto del congreso actual.
+ * @return string
+ */
+function generarPieMensajeWA() {
+    $correo = traerCorreoContactoCongreso();
+    $contacto = $correo ? $correo : 'el correo del Congreso';
+    return "\n\n_Este número es solo para notificaciones. En caso de tener una duda, sugerencia u opinión acerca del Congreso contacta a través del siguiente medio: {$contacto}_";
+}
 
 /**
  * Envía un mensaje de WhatsApp vía el microservicio Baileys.
@@ -44,7 +68,7 @@ function enviarWhatsapp($telefono, $mensaje) {
     $telefono = normalizarTelefono($telefono);
     if (empty($telefono)) return;
     $url = 'http://localhost:3001/send';
-    $data = json_encode(['telefono' => $telefono, 'mensaje' => $mensaje . WA_PIE_MENSAJE]);
+    $data = json_encode(['telefono' => $telefono, 'mensaje' => $mensaje . generarPieMensajeWA()]);
     $ctx = stream_context_create([
         'http' => [
             'method'  => 'POST',
@@ -67,7 +91,7 @@ function enviarWhatsappPdf($telefono, $rutaPdf, $mensaje = '') {
     $telefono = normalizarTelefono($telefono);
     if (empty($telefono) || empty($rutaPdf)) return;
     $url = 'http://localhost:3001/send-pdf';
-    $data = json_encode(['telefono' => $telefono, 'ruta' => $rutaPdf, 'mensaje' => $mensaje . WA_PIE_MENSAJE]);
+    $data = json_encode(['telefono' => $telefono, 'ruta' => $rutaPdf, 'mensaje' => $mensaje . generarPieMensajeWA()]);
     $ctx = stream_context_create([
         'http' => [
             'method'  => 'POST',
