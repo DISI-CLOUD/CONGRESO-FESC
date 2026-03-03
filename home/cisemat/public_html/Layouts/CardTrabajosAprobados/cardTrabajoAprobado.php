@@ -111,8 +111,7 @@ require "../../modelo/trabajosRegistrados.php";
                 <div class="col-10"><span class="textoAdvertencia">No puede eliminar la ponencia ya que tiene asignado un evaluador</span></div>
             </div>
             <?php
-            //if(($descripcionRevisionPonencia=='EXTENSO REVISION FINAL' && $videoPonencia=='') || ($descripcionRevisionPonencia=='RESUMEN' && $videoPonencia=='' && $idTipoPonencia=='2')){
-            if(($descripcionRevisionPonencia=='EXTENSO REVISION FINAL' && $videoPonencia=='') || ($descripcionRevisionPonencia=='RESUMEN' && $estadoRevisionPonencia=='A' && $idTipoPonencia=='2')){
+            if(($descripcionRevisionPonencia=='EXTENSO REVISION FINAL') || ($descripcionRevisionPonencia=='RESUMEN' && $estadoRevisionPonencia=='A' && $idTipoPonencia=='2')){
             ?>
             <div class="container mt-3 d-flex justify-content-end"><span id="spanFlecha" class="card-title">Siguiente Paso</span><a href="../../components/siguientePaso/siguientePaso.php?id=<?php echo $idPonencia ?>"><button class="flechaCard"><i class="fa-solid fa-arrow-right"></i></button></a></div>
             <?php

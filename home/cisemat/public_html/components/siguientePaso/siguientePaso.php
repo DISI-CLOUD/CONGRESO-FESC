@@ -15,7 +15,7 @@ if ($idPonencia == '') {
 //Consulta su tipo de ponencia para subir Extenso o Cartel
 $consTipoPonencia = "SELECT * FROM ponencia WHERE id_ponencia='$idPonencia' AND id_congreso='$idCongreso'";
 
-echo "<br>componentes/Siguiente Paso - Congreso : ".$consPonencia."<br>";
+//echo "<br>componentes/Siguiente Paso - Congreso : ".$consPonencia."<br>";
 
 $resTipoPonencia = mysqli_query($conexion, $consTipoPonencia);
 $fetchTipoPonencia = mysqli_fetch_assoc($resTipoPonencia);
@@ -254,7 +254,7 @@ $fechaRevisionPonencia = $fetchUsuarioRevisionPonencia['fecha_revision'];
     -->
     <div class="containerSubirArchivo mb-5" id="containerSubirArchivo">
         <span class="card-text"><strong>Por favor sigue las indicaciones de la carta de extenso aceptado enviado al correo.</strong></span>
-        
+
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 d-sm-block col-sm-12 col-xs-12">
                 <div class="mt-4 d-flex align-self-end">
@@ -264,9 +264,40 @@ $fechaRevisionPonencia = $fetchUsuarioRevisionPonencia['fecha_revision'];
             </div>
             <div class="col-6"></div>
         </div>
-        <div class="row mt-5">
+        <div class="row mt-4">
             <div class="col-xl-4 col-lg-4 col-md-6 d-sm-block col-sm-12 col-xs-12 d-grid">
                 <a href="../../components/GuiasYPlantillas/guias.php"><button type="button" class="btn-azul">Especificaciones de video</button></a>
+            </div>
+        </div>
+        <?php if(!empty($videoPonenciaActual)): ?>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="alert alert-info mb-0">
+                    <strong>Link actual guardado:</strong>
+                    <a href="<?php echo htmlspecialchars($videoPonenciaActual); ?>" target="_blank" rel="noopener noreferrer">
+                        <?php echo htmlspecialchars($videoPonenciaActual); ?>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+        <div class="row mt-4">
+            <div class="col-xl-7 col-lg-7 col-md-8 col-sm-12 mt-2">
+                <label for="inputLinkVideo" class="form-label fw-semibold">
+                    <?php echo !empty($videoPonenciaActual) ? 'Actualizar link del video' : 'Link del video'; ?>
+                </label>
+                <input type="url" name="inputLinkVideo" id="inputLinkVideo" class="form-control mb-1"
+                       placeholder="Pega aquí tu link de Google Drive, YouTube, Vimeo o OneDrive"
+                       pattern="^https?://(drive\.google\.com|www\.youtube\.com|youtu\.be|vimeo\.com|onedrive\.live\.com|1drv\.ms)/.+"
+                       title="Solo se aceptan links de Google Drive, YouTube, Vimeo o OneDrive"
+                       value="<?php echo htmlspecialchars($videoPonenciaActual); ?>">
+                <small class="text-muted">Formatos aceptados: <strong>Google Drive</strong>, <strong>YouTube</strong>, <strong>Vimeo</strong> y <strong>OneDrive</strong></small>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 mt-2 d-flex align-items-center">
+                <div class="d-grid w-100 mt-3">
+                    <input name="subirVideo" class="btn-azul" type="submit"
+                           value="<?php echo !empty($videoPonenciaActual) ? 'Actualizar Link' : 'Guardar Link'; ?>">
+                </div>
             </div>
         </div>
         <div class="mt-3">

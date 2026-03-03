@@ -16,6 +16,7 @@
     $nombrePonencia=$fetchPonencia['titulo_ponencia'];
     $idUsuarioEvalua=$fetchPonencia['id_usuario_evalua'];
     $numero=$fetchPonencia['numero'];
+    $videoPonenciaActual=$fetchPonencia['video_ponencia'];
     //Fecha actual
     date_default_timezone_set('America/Mexico_City');
     $fechaActual = date('y-m-d G:i:s');
@@ -194,23 +195,26 @@
         }
 
         if(isset($_POST['subirVideo'])){
-            $linkVideo=$_POST['inputLinkVideo'];
-            if(!empty($linkVideo)){
-                //Update de video
-                //Update en la etapa de la ponencia
-                $subirVideo = "UPDATE ponencia SET video_ponencia='$linkVideo' WHERE id_ponencia='$idPonencia' AND id_congreso='$idCongreso'";
+            $linkVideo = trim($_POST['inputLinkVideo']);
+            $urlValida = preg_match('/^https?:\/\/(drive\.google\.com|www\.youtube\.com|youtu\.be|vimeo\.com|onedrive\.live\.com|1drv\.ms)\/.+/', $linkVideo);
+            if(!empty($linkVideo) && $urlValida){
+                $linkVideoEscapado = mysqli_real_escape_string($conexion, $linkVideo);
+                //Update de video en la tabla ponencia
+                $subirVideo = "UPDATE ponencia SET video_ponencia='$linkVideoEscapado' WHERE id_ponencia='$idPonencia' AND id_congreso='$idCongreso'";
                 $data_check3 = mysqli_query($conexion, $subirVideo);
                 if($data_check3){
                     //Se le notifica al evaluador
                     require_once '../../librerias/PHPMailer/src/correoAsignacionEvaluador.php';
                     //Muestra si el registro fue exitoso y lo muestra en información.
-                    $info = "Se ha subido el video. Se ha enviado un correo electrónico al evaluador del trabajo.";
+                    $info = "Se ha guardado el link del video. Se ha enviado un correo electrónico al evaluador del trabajo.";
                     $_SESSION['info'] = $info;
                 }else{
-                    $errores['db-error'] = "Fallo mientras intentaba hacer el registro en la Base.";
+                    $errores['db-error'] = "Fallo mientras intentaba hacer el registro en la Base de Datos.";
                 }
+            }else if(empty($linkVideo)){
+                $errores['db-error'] = "Debes ingresar un link de video.";
             }else{
-                $errores['db-error'] = "Debes ingresar un link válido.";
+                $errores['db-error'] = "Solo se aceptan links de Google Drive, YouTube, Vimeo o OneDrive.";
             }
 
 
