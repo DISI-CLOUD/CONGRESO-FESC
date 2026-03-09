@@ -203,10 +203,8 @@
                 $subirVideo = "UPDATE ponencia SET video_ponencia='$linkVideoEscapado' WHERE id_ponencia='$idPonencia' AND id_congreso='$idCongreso'";
                 $data_check3 = mysqli_query($conexion, $subirVideo);
                 if($data_check3){
-                    //Se le notifica al evaluador
-                    require_once '../../librerias/PHPMailer/src/correoAsignacionEvaluador.php';
                     //Muestra si el registro fue exitoso y lo muestra en información.
-                    $info = "Se ha guardado el link del video. Se ha enviado un correo electrónico al evaluador del trabajo.";
+                    $info = "Se ha guardado el link del video.";
                     $_SESSION['info'] = $info;
                 }else{
                     $errores['db-error'] = "Fallo mientras intentaba hacer el registro en la Base de Datos.";
