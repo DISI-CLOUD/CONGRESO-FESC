@@ -17,6 +17,7 @@
             <th scope="col">Fecha</th>
             <th scope="col">Evaluador</th>
             <th scope="col">Correo del Evaluador</th>
+            <th scope="col">Video Ponencia</th>
         </tr>
         </thead>
         <tbody>
@@ -45,6 +46,7 @@
                     else    
                       $nombreEvaluador = "Sin evaluador";
                     $emailEvaluador = $fetchPonenciasRegistradas['correo_evaluador'];
+                    $videoPonencia = $fetchPonenciasRegistradas['video_ponencia'];
 
             ?>
                     <tr>
@@ -57,14 +59,15 @@
                         <td class="text-wrap text-uppercase"><?php echo $fechaRegistroPonenciaFormato; ?></td>
                         <td class="text-wrap text-uppercase"><?php echo $nombreEvaluador; ?></td>
                         <td class="text-wrap text-uppercase"><?php echo $emailEvaluador; ?></td>
+                        <td class="text-wrap"><?php if (!empty($videoPonencia)) { echo '<a href="' . htmlspecialchars($videoPonencia) . '" target="_blank">' . htmlspecialchars($videoPonencia) . '</a>'; } else { echo 'Sin video'; } ?></td>
                     </tr>
             <?php
                 }
             } else {
                 if ($etapaTrabajo == 'EXTENSO') {
-                    echo '<td colspan="9"><h5 class="text-center">No se encontraron trabajos aceptados en la etapa <b>' . $etapaTrabajo . '.</b><br><br>Los extensos ACEPTADOS pasan automaticamente a la etapa EXTENSOS FINALES pendientes por evaluar.</h5></td>';
+                    echo '<td colspan="10"><h5 class="text-center">No se encontraron trabajos aceptados en la etapa <b>' . $etapaTrabajo . '.</b><br><br>Los extensos ACEPTADOS pasan automaticamente a la etapa EXTENSOS FINALES pendientes por evaluar.</h5></td>';
                 } else {
-                    echo '<td colspan="9"><h5 class="text-center">No se encontraron trabajos aceptados en la etapa <b>' . $etapaTrabajo . '</b></h5></td>';
+                    echo '<td colspan="10"><h5 class="text-center">No se encontraron trabajos aceptados en la etapa <b>' . $etapaTrabajo . '</b></h5></td>';
                 }
             }
             ?>

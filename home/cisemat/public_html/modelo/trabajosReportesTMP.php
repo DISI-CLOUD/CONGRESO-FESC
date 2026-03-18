@@ -148,8 +148,9 @@ SELECT substring(p.id_ponencia,8,3) as num,
     ur.id_revision,
     ur.descripcion_revision,
     MAX(ur.fecha_revision) as fecha,
-    ur.estatus_revision
- 
+    ur.estatus_revision,
+    p.video_ponencia
+
  FROM ponencia p
 
  LEFT JOIN usuario u

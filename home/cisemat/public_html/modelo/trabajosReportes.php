@@ -62,7 +62,8 @@
        b.estatus_revision,
      concat(u.nombres_usuario,' ',u.apellidos_usuario) as Evaluador,
        u.email_usuario as correo_evaluador,
-       b.id_revision 
+       b.id_revision,
+       b.video_ponencia
     FROM tmp b
     LEFT JOIN usuario u ON b.id_usuario_evalua=u.id_usuario
     ORDER BY b.num";
