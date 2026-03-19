@@ -15,6 +15,7 @@
             <th scope="col">Descripción revisión</th>
             <th scope="col">Estatus revisión</th>
             <th scope="col">Fecha</th>
+            <th scope="col">Recordatorio</th>
             <th scope="col">Evaluador</th>
             <th scope="col">Correo del Evaluador</th>
             <th scope="col">Video Ponencia</th>
@@ -57,6 +58,18 @@
                         <td class="text-wrap text-uppercase"><?php echo $descRevision; ?></td>
                         <td class="text-wrap text-uppercase"><?php echo $estatusRev; ?></td>
                         <td class="text-wrap text-uppercase"><?php echo $fechaRegistroPonenciaFormato; ?></td>
+                        <td class="text-wrap text-center">
+                            <?php if ($nombreEvaluador !== "Sin evaluador" && (empty($estatusRev) || $estatusRev === 'F')) { ?>
+                                <button class="btn btn-warning btn-sm btn-recordatorio"
+                                    data-id="<?php echo htmlspecialchars($idPonencia); ?>"
+                                    data-titulo="<?php echo htmlspecialchars($tituloPonencia); ?>"
+                                    data-ponente="<?php echo htmlspecialchars($nombrePonente); ?>"
+                                    data-evaluador="<?php echo htmlspecialchars($nombreEvaluador); ?>"
+                                    data-email="<?php echo htmlspecialchars($emailEvaluador); ?>">
+                                    Enviar recordatorio
+                                </button>
+                            <?php } else { echo '-'; } ?>
+                        </td>
                         <td class="text-wrap text-uppercase"><?php echo $nombreEvaluador; ?></td>
                         <td class="text-wrap text-uppercase"><?php echo $emailEvaluador; ?></td>
                         <td class="text-wrap"><?php if (!empty($videoPonencia)) { echo '<a href="' . htmlspecialchars($videoPonencia) . '" target="_blank">' . htmlspecialchars($videoPonencia) . '</a>'; } else { echo 'Sin video'; } ?></td>
@@ -65,9 +78,9 @@
                 }
             } else {
                 if ($etapaTrabajo == 'EXTENSO') {
-                    echo '<td colspan="10"><h5 class="text-center">No se encontraron trabajos aceptados en la etapa <b>' . $etapaTrabajo . '.</b><br><br>Los extensos ACEPTADOS pasan automaticamente a la etapa EXTENSOS FINALES pendientes por evaluar.</h5></td>';
+                    echo '<td colspan="11"><h5 class="text-center">No se encontraron trabajos aceptados en la etapa <b>' . $etapaTrabajo . '.</b><br><br>Los extensos ACEPTADOS pasan automaticamente a la etapa EXTENSOS FINALES pendientes por evaluar.</h5></td>';
                 } else {
-                    echo '<td colspan="10"><h5 class="text-center">No se encontraron trabajos aceptados en la etapa <b>' . $etapaTrabajo . '</b></h5></td>';
+                    echo '<td colspan="11"><h5 class="text-center">No se encontraron trabajos aceptados en la etapa <b>' . $etapaTrabajo . '</b></h5></td>';
                 }
             }
             ?>
@@ -75,3 +88,44 @@
         </tbody>
     </table>
 </div>
+
+<script>
+document.querySelectorAll('.btn-recordatorio').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        var button = this;
+        var datos = new FormData();
+        datos.append('idPonencia', button.dataset.id);
+        datos.append('tituloPonencia', button.dataset.titulo);
+        datos.append('nombrePonente', button.dataset.ponente);
+        datos.append('nombreEvaluador', button.dataset.evaluador);
+        datos.append('emailEvaluador', button.dataset.email);
+
+        button.disabled = true;
+        button.textContent = 'Enviando...';
+
+        fetch('../../modelo/enviarRecordatorioEvaluador.php', {
+            method: 'POST',
+            body: datos
+        })
+        .then(function(response) { return response.json(); })
+        .then(function(data) {
+            if (data.success) {
+                button.disabled = false;
+                button.textContent = 'Volver a enviar';
+                button.classList.remove('btn-warning');
+                button.classList.add('btn-success');
+                alert(data.message);
+            } else {
+                button.disabled = false;
+                button.textContent = 'Enviar recordatorio';
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(function(error) {
+            button.disabled = false;
+            button.textContent = 'Enviar recordatorio';
+            alert('Error al enviar el correo');
+        });
+    });
+});
+</script>
