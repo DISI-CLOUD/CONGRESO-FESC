@@ -44,4 +44,8 @@ $mail->CharSet = 'UTF-8';
 if (!$mail->Send()) {
     echo "Error: " . $mail->ErrorInfo;
 }
+
+require_once __DIR__ . '/../../whatsapp/enviarWhatsapp.php';
+$_tel = traerTelefonoPorEmail($emailEvaluador, $conexion);
+enviarWhatsapp($_tel, "Estimado(a) " . $nombreEvaluador . ", le recordamos que tiene pendiente la evaluación del trabajo " . $idPonencia . " - " . $tituloPonencia . ". Ingrese al sitio del congreso para realizarla. Si ya la realizó, haga caso omiso a este mensaje.");
 ?>
